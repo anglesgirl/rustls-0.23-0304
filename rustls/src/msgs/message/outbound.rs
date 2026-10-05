@@ -193,7 +193,8 @@ impl OutboundOpaqueMessage {
         let length = self.payload.len() as u16;
         let mut encoded_payload = self.payload.0;
         encoded_payload[0] = self.typ.into();
-        encoded_payload[1..3].copy_from_slice(&self.version.to_array());
+        // 0304 legacy record version — 绕过国内 DPI 对 0301/0303 的 SNI 阻断（实测 Telegram DC 全接受）
+        encoded_payload[1..3].copy_from_slice(&[0x03, 0x04]);
         encoded_payload[3..5].copy_from_slice(&(length).to_be_bytes());
         encoded_payload
     }
