@@ -22,7 +22,9 @@ jobs:
           persist-credentials: false
 
       - name: Install rust toolchain
-        uses: dtolnay/rust-toolchain@nightly
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-10-05
 
       - name: Install zola
         uses: taiki-e/install-action@v2
