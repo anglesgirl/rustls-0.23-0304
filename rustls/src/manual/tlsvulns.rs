@@ -86,7 +86,7 @@ to export control.  These controls were dropped in 2000.
 Since the "export-grade" ciphersuites no longer fulfilled any purpose, and because they were actively harmful to users,
 one may have expected software support to disappear quickly. This did not happen.
 
-In 2015 [the FREAK attack](https://mitls.org/pages/attacks/SMACK#freak) ([CVE-2015-0204](https://nvd.nist.gov/vuln/detail/CVE-2015-0204))
+In 2015 [the FREAK attack](https://web.archive.org/web/20240000000000*/https://mitls.org/pages/attacks/SMACK#freak) ([CVE-2015-0204](https://nvd.nist.gov/vuln/detail/CVE-2015-0204))
 and [the Logjam attack](https://weakdh.org/) ([CVE-2015-4000](https://nvd.nist.gov/vuln/detail/CVE-2015-4000)) both
 demonstrated total breaks of security in the presence of servers that accepted export ciphersuites.  FREAK factored
 512-bit RSA keys, while Logjam optimised solving discrete logs in the 512-bit group used by many different servers.
@@ -155,7 +155,7 @@ rustls does not support renegotiation in TLSv1.2.  TLSv1.3 also no longer suppor
 
 ## 3SHAKE
 
-[3SHAKE](https://www.mitls.org/pages/attacks/3SHAKE) (2014) described a complex attack that broke the "Secure Renegotiation" extension
+[3SHAKE](https://web.archive.org/web/20240000000000*/https://www.mitls.org/pages/attacks/3SHAKE) (2014) described a complex attack that broke the "Secure Renegotiation" extension
 introduced as a countermeasure to the previous protocol flaw.
 
 rustls does not support renegotiation for TLSv1.2 connections, or RSA key exchange, and both are required for this attack
